@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Mabini, Batangas - Diving Paradise & Mountain Adventures</title>
+  <meta name="description" content="Explore Mabini, Batangas – diving paradise, beaches, Mt. Gulugod Baboy, and authentic Filipino cuisine.">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Lato:wght@300;400;500;700&display=swap');
+    
+    :root {
+      /* Colors */
+      --color-primary: #006994;
+      --color-primary-hover: #004d6b;
+      --color-secondary: #0099B8;
+      --color-secondary-hover: #007a94;
+      --color-tertiary: #D4B483;
+      --color-accent: #E76F51;
+      --color-accent-hover: #c44f35;
+      --color-text: #1A1A1A;
+      --color-text-inverse: #FFFFFF;
+      --color-background: #FFFFFF;
+      --color-success: #2E7D32;
+      --color-warning: #E76F51;
+      
+      /* Gray Scale */
+      --color-gray-50: #F9FAFB;
+      --color-gray-100: #F3F4F6;
+      --color-gray-200: #E5E7EB;
+      --color-gray-300: #D1D5DB;
+      --color-gray-400: #9CA3AF;
+      --color-gray-500: #6B7280;
+      --color-gray-600: #4B5563;
+      --color-gray-700: #374151;
+      --color-gray-800: #1F2937;
+      --color-gray-900: #111827;
+      
+      /* Gradients */
+      --gradient-primary: linear-gradient(135deg, #006994, #0099B8);
+      --gradient-secondary: linear-gradient(180deg, #E76F51, #D4B483);
+      --gradient-overlay: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+      
+      /* Typography */
+      --font-family-primary: "Raleway", sans-serif;
+      --font-family-secondary: "Lato", sans-serif;
+      --font-size-xs: 12px;
+      --font-size-sm: 14px;
+      --font-size-base: 16px;
+      --font-size-lg: 18px;
+      --font-size-xl: 20px;
+      --font-size-2xl: 24px;
+      --font-size-3xl: 30px;
+      --font-size-4xl: 36px;
+      --font-size-5xl: 48px;
+      --font-size-6xl: 60px;
+      --font-weight-light: 300;
+      --font-weight-normal: 400;
+      --font-weight-medium: 500;
+      --font-weight-semibold: 600;
+      --font-weight-bold: 700;
+      
+      /* Spacing */
+      --spacing-1: 4px;
+      --spacing-2: 8px;
+      --spacing-3: 12px;
+      --spacing-4: 16px;
+      --spacing-6: 24px;
+      --spacing-8: 32px;
+      --spacing-12: 48px;
+      --spacing-16: 64px;
+      --spacing-20: 80px;
+      --spacing-24: 96px;
+      --spacing-32: 128px;
+      
+      /* Border Radius */
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--color-background);
+      color: var(--color-text);
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-family-secondary);
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.6;
+      background-color: var(--color-background);
+      color: var(--color-text);
+    }
+    
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--gradient-primary);
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-8);
+      height: 64px;
+    }
+    
+    .logo {
+      font-family: var(--font-family-primary);
+      font-size: var(--font-size-xl);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text-inverse);
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: var(--spacing-8);
+    }
+    
+    .nav-links a {
+      color: var(--color-text-inverse);
+      text-decoration: none;
+      font-weight: var(--font-weight-medium);
+      padding: var(--spacing-3) var(--spacing-4);
+      border-radius: var(--radius-sm);
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .nav-links a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--color-text-inverse);
+      font-size: var(--font-size-2xl);
+      cursor: pointer;
+      padding: var(--spacing-2);
+    }
+    
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: var(--color-primary);
+      padding: var(--spacing-4);
+      z-index: 999;
+    }
+    
+    .mobile-menu.active {
+      display: block;
+    }
+    
+    .mobile-menu a {
+      display: block;
+      color: var(--color-text-inverse);
+      text-decoration: none;
+      padding: var(--spacing-4);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: var(--font-weight-medium);
+    }
+    
+    .aurora-text {
+      background: linear-gradient(45deg, var(--color-accent), var(--color-tertiary), var(--color-secondary));
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: aurora 3s ease-in-out infinite;
+    }
+    
+    @keyframes aurora {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--color-primary-hover);
+    }
+    
+    .btn-secondary:hover {
+      background-color: var(--color-secondary-hover);
+    }
+    
+    .btn-accent:hover {
+      background-color: var(--color-accent-hover);
+    }
+    
+    .card:hover {
+      transform: scale(1.02);
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .mobile-menu-toggle {
+        display: block;
+      }
+      
+      .hero-content h1 {
+        font-size: var(--font-size-4xl) !important;
+      }
+      
+      .hero-content h2 {
+        font-size: var(--font-size-lg) !important;
+      }
+      
+      .carousel {
+        flex-direction: column !important;
+      }
+      
+      .carousel-item {
+        width: 100% !important;
+        margin-bottom: var(--spacing-6) !important;
+      }
+      
+      .highlight-content {
+        flex-direction: column !important;
+      }
+      
+      .highlight-text, .highlight-image {
+        width: 100% !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="#home" class="logo" style="color: var(--color-text-inverse);">Mabini Tourism</a>
+      <ul class="nav-links">
+        <li><a href="#home" style="color: var(--color-text-inverse);">Home</a></li>
+        <li><a href="#attractions" style="color: var(--color-text-inverse);">Attractions</a></li>
+        <li><a href="#highlights" style="color: var(--color-text-inverse);">Plan Your Visit</a></li>
+        <li><a href="#contact" style="color: var(--color-text-inverse);">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" style="color: var(--color-text-inverse);">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home" onclick="closeMobileMenu()" style="color: var(--color-text-inverse);">Home</a>
+      <a href="#attractions" onclick="closeMobileMenu()" style="color: var(--color-text-inverse);">Attractions</a>
+      <a href="#highlights" onclick="closeMobileMenu()" style="color: var(--color-text-inverse);">Plan Your Visit</a>
+      <a href="#contact" onclick="closeMobileMenu()" style="color: var(--color-text-inverse);">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" style="position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <div style="position: relative; width: 100%; height: 100%;">
+      <video
+        aria-label="diving underwater view"
+        src="https://c.animaapp.com/mfma8fs4VBFjiQ/img/ai_1.mp4"
+        poster="https://c.animaapp.com/mfma8fs4VBFjiQ/img/ai_1-poster.png"
+        style="width: 100%; height: 100%; object-fit: cover;"
+        autoplay
+        loop
+        muted
+        playsinline
+      ></video>
+      <div style="pointer-events: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);"></div>
+    </div>
+    <div class="hero-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 10; max-width: 800px; padding: 0 var(--spacing-8);">
+      <h1 style="font-family: var(--font-family-primary); font-size: var(--font-size-6xl); font-weight: var(--font-weight-bold); color: var(--color-text-inverse); margin: 0 0 var(--spacing-6) 0; line-height: 1.2;">
+        Explore <span class="aurora-text">Mabini</span>, Batangas
+      </h1>
+      <h2 style="font-family: var(--font-family-secondary); font-size: var(--font-size-xl); font-weight: var(--font-weight-normal); color: var(--color-text-inverse); margin: 0 0 var(--spacing-8) 0; opacity: 0.9;">
+        Discover diving havens, mountain trails, and local flavors
+      </h2>
+      <button class="btn-primary" onclick="document.getElementById('attractions').scrollIntoView({behavior: 'smooth'})" style="background-color: var(--color-accent); color: var(--color-text-inverse); border: none; padding: var(--spacing-4) var(--spacing-8); font-size: var(--font-size-base); font-weight: var(--font-weight-normal); border-radius: var(--radius-md); cursor: pointer; transition: background-color 0.3s ease; font-family: var(--font-family-secondary);">
+        Plan Your Visit
+      </button>
+    </div>
+  </section>
+
+  <!-- Featured Attractions Carousel -->
+  <section id="attractions" style="padding: var(--spacing-20) var(--spacing-8); background-color: var(--color-gray-50);">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <h2 style="font-family: var(--font-family-primary); font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--color-text); text-align: center; margin: 0 0 var(--spacing-16) 0;">
+        Featured Attractions
+      </h2>
+      <div class="carousel" style="display: flex; gap: var(--spacing-6); overflow-x: auto; scroll-snap-type: x mandatory; padding: var(--spacing-4) 0;">
+        <div class="carousel-item card" style="flex: 0 0 300px; background-color: var(--color-background); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); scroll-snap-align: start; transition: transform 0.3s ease; cursor: pointer;" onclick="document.getElementById('highlights').scrollIntoView({behavior: 'smooth'})">
+          <img src="assets/Anilao-Batangas-Itinerary.jpg" alt="diving boat on sea" loading="lazy" style="width: 100%; height: 200px; object-fit: cover;">
+          <div style="padding: var(--spacing-6);">
+            <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); color: var(--color-text); margin: 0 0 var(--spacing-3) 0;">
+              Diving Spots (Anilao)
+            </h3>
+            <p style="color: var(--color-gray-600); margin: 0; font-size: var(--font-size-sm); line-height: 1.5;">
+              World-class diving sites with rich marine life and crystal-clear waters.
+            </p>
+          </div>
+        </div>
+        
+        <div class="carousel-item card" style="flex: 0 0 300px; background-color: var(--color-background); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); scroll-snap-align: start; transition: transform 0.3s ease; cursor: pointer;" onclick="document.getElementById('highlights').scrollIntoView({behavior: 'smooth'})">
+          <img src="assets/Anilao-Beach.jpg" alt="white sandy beach view" loading="lazy" style="width: 100%; height: 200px; object-fit: cover;">
+          <div style="padding: var(--spacing-6);">
+            <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); color: var(--color-text); margin: 0 0 var(--spacing-3) 0;">
+              White Sand Beaches
+            </h3>
+            <p style="color: var(--color-gray-600); margin: 0; font-size: var(--font-size-sm); line-height: 1.5;">
+              Relax on pristine white sand beaches and swim in clear tropical waters.
+            </p>
+          </div>
+        </div>
+        
+        <div class="carousel-item card" style="flex: 0 0 300px; background-color: var(--color-background); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); scroll-snap-align: start; transition: transform 0.3s ease; cursor: pointer;" onclick="document.getElementById('highlights').scrollIntoView({behavior: 'smooth'})">
+          <img src="assets/Mt.-Gulugod-Baboy-Hike-Civer.png" alt="mountain hiking trail" loading="lazy" style="width: 100%; height: 200px; object-fit: cover;">
+          <div style="padding: var(--spacing-6);">
+            <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); color: var(--color-text); margin: 0 0 var(--spacing-3) 0;">
+              Mt. Gulugod Baboy
+            </h3>
+            <p style="color: var(--color-gray-600); margin: 0; font-size: var(--font-size-sm); line-height: 1.5;">
+              Scenic hiking trails with panoramic views of Batangas and surrounding areas.
+            </p>
+          </div>
+        </div>
+        
+        <div class="carousel-item card" style="flex: 0 0 300px; background-color: var(--color-background); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); scroll-snap-align: start; transition: transform 0.3s ease; cursor: pointer;" onclick="document.getElementById('highlights').scrollIntoView({behavior: 'smooth'})">
+          <img src="assets/10530322.jpg" alt="local food platter" loading="lazy" style="width: 100%; height: 200px; object-fit: cover;">
+          <div style="padding: var(--spacing-6);">
+            <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); color: var(--color-text); margin: 0 0 var(--spacing-3) 0;">
+              Local Food
+            </h3>
+            <p style="color: var(--color-gray-600); margin: 0; font-size: var(--font-size-sm); line-height: 1.5;">
+              Taste authentic Batangueño cuisine and traditional Filipino specialties.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights Section -->
+  <section id="highlights" style="padding: var(--spacing-20) var(--spacing-8); background-color: var(--color-background);">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <h2 style="font-family: var(--font-family-primary); font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--color-text); text-align: center; margin: 0 0 var(--spacing-16) 0;">
+        Experience Mabini
+      </h2>
+      
+      <!-- Highlight 1 -->
+      <div class="highlight-content" style="display: flex; align-items: center; gap: var(--spacing-12); margin-bottom: var(--spacing-20);">
+        <div class="highlight-text" style="flex: 1;">
+          <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-3xl); font-weight: var(--font-weight-semibold); color: var(--color-text); margin: 0 0 var(--spacing-6) 0;">
+            World-Class Diving
+          </h3>
+          <p style="color: var(--color-gray-600); font-size: var(--font-size-lg); line-height: 1.6; margin: 0 0 var(--spacing-6) 0;">
+            Anilao in Mabini is renowned as one of the Philippines' premier diving destinations. With over 40 dive sites featuring vibrant coral reefs, diverse marine life, and excellent visibility, it's a paradise for both beginner and experienced divers.
+          </p>
+          <button class="btn-secondary" style="background-color: var(--color-secondary); color: var(--color-text-inverse); border: none; padding: var(--spacing-3) var(--spacing-6); font-size: var(--font-size-base); font-weight: var(--font-weight-normal); border-radius: var(--radius-md); cursor: pointer; transition: background-color 0.3s ease; font-family: var(--font-family-secondary);">
+            Explore Diving Sites
+          </button>
+        </div>
+        <div class="highlight-image" style="flex: 1;">
+          <img src="assets/Group-1-1.jpg" alt="diving boat on sea" loading="lazy" style="width: 100%; height: 400px; object-fit: cover; border-radius: var(--radius-lg);">
+        </div>
+      </div>
+      
+      <!-- Highlight 2 -->
+      <div class="highlight-content" style="display: flex; align-items: center; gap: var(--spacing-12); margin-bottom: var(--spacing-20); flex-direction: row-reverse;">
+        <div class="highlight-text" style="flex: 1;">
+          <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-3xl); font-weight: var(--font-weight-semibold); color: var(--color-text); margin: 0 0 var(--spacing-6) 0;">
+            Anilao Beach
+          </h3>
+          <p style="color: var(--color-gray-600); font-size: var(--font-size-lg); line-height: 1.6; margin: 0 0 var(--spacing-6) 0;">
+            Discover secluded white sand beaches with crystal-clear waters perfect for swimming, snorkeling, and relaxation. Our beaches offer the perfect escape from the hustle and bustle of city life.
+          </p>
+          <button class="btn-secondary" style="background-color: var(--color-secondary); color: var(--color-text-inverse); border: none; padding: var(--spacing-3) var(--spacing-6); font-size: var(--font-size-base); font-weight: var(--font-weight-normal); border-radius: var(--radius-md); cursor: pointer; transition: background-color 0.3s ease; font-family: var(--font-family-secondary);">
+            Find Beaches
+          </button>
+        </div>
+        <div class="highlight-image" style="flex: 1;">
+          <img src="assets/Anilao-1.jpg" alt="white sandy beach view" loading="lazy" style="width: 100%; height: 400px; object-fit: cover; border-radius: var(--radius-lg);">
+        </div>
+      </div>
+      
+      <!-- Highlight 3 -->
+      <div class="highlight-content" style="display: flex; align-items: center; gap: var(--spacing-12); margin-bottom: var(--spacing-20);">
+        <div class="highlight-text" style="flex: 1;">
+          <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-3xl); font-weight: var(--font-weight-semibold); color: var(--color-text); margin: 0 0 var(--spacing-6) 0;">
+            Mountain Adventures
+          </h3>
+          <p style="color: var(--color-gray-600); font-size: var(--font-size-lg); line-height: 1.6; margin: 0 0 var(--spacing-6) 0;">
+            Mt. Gulugod Baboy offers one of the most scenic hiking experiences in Batangas. The relatively easy trail rewards hikers with breathtaking 360-degree views of Batangas Bay, Taal Lake, and the surrounding countryside.
+          </p>
+          <button class="btn-secondary" style="background-color: var(--color-secondary); color: var(--color-text-inverse); border: none; padding: var(--spacing-3) var(--spacing-6); font-size: var(--font-size-base); font-weight: var(--font-weight-normal); border-radius: var(--radius-md); cursor: pointer; transition: background-color 0.3s ease; font-family: var(--font-family-secondary);">
+            Plan Your Hike
+          </button>
+        </div>
+        <div class="highlight-image" style="flex: 1;">
+          <img src="assets/mt-gulugod-baboy.JPG" alt="mountain hiking trail" loading="lazy" style="width: 100%; height: 400px; object-fit: cover; border-radius: var(--radius-lg);">
+        </div>
+      </div>
+      
+      <!-- Highlight 4 -->
+      <div class="highlight-content" style="display: flex; align-items: center; gap: var(--spacing-12); flex-direction: row-reverse;">
+        <div class="highlight-text" style="flex: 1;">
+          <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-3xl); font-weight: var(--font-weight-semibold); color: var(--color-text); margin: 0 0 var(--spacing-6) 0;">
+            Authentic Food
+          </h3>
+          <p style="color: var(--color-gray-600); font-size: var(--font-size-lg); line-height: 1.6; margin: 0 0 var(--spacing-6) 0;">
+            Savor the rich flavors of Batangueño cuisine with fresh seafood, traditional Filipino dishes, and local specialties. From grilled fish to authentic adobo, experience the true taste of the Philippines.
+          </p>
+          <button class="btn-secondary" style="background-color: var(--color-secondary); color: var(--color-text-inverse); border: none; padding: var(--spacing-3) var(--spacing-6); font-size: var(--font-size-base); font-weight: var(--font-weight-normal); border-radius: var(--radius-md); cursor: pointer; transition: background-color 0.3s ease; font-family: var(--font-family-secondary);">
+            Discover Local Food
+          </button>
+        </div>
+        <div class="highlight-image" style="flex: 1;">
+          <img src="assets/1607_ChickenPorkAdobo-640-1.jpg" alt="local food platter" loading="lazy" style="width: 100%; height: 400px; object-fit: cover; border-radius: var(--radius-lg);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section style="padding: var(--spacing-20) var(--spacing-8); background-color: var(--color-gray-50);">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <h2 style="font-family: var(--font-family-primary); font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--color-text); text-align: center; margin: 0 0 var(--spacing-12) 0;">
+        Find Us in Mabini
+      </h2>
+      <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62018.77234234567!2d120.8789!3d13.7200!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd0c8c8c8c8c8c%3A0x8c8c8c8c8c8c8c8c!2sMabini%2C%20Batangas!5e0!3m2!1sen!2sph!4v1234567890123!5m2!1sen!2sph&key=YOUR_API_KEY"
+          title="Map showing Mabini, Batangas location"
+          loading="lazy"
+          style="width: 100%; height: 400px; border: 0;"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" style="background: var(--gradient-primary); color: var(--color-text-inverse); padding: var(--spacing-16) var(--spacing-8);">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-12); margin-bottom: var(--spacing-12);">
+        <div>
+          <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); color: var(--color-text-inverse); margin: 0 0 var(--spacing-6) 0;">
+            Contact Information
+          </h3>
+          <p style="color: var(--color-text-inverse); margin: 0 0 var(--spacing-3) 0; opacity: 0.9;">
+            Mabini Tourism Office<br>
+            Mabini, Batangas, Philippines
+          </p>
+          <p style="color: var(--color-text-inverse); margin: 0 0 var(--spacing-3) 0; opacity: 0.9;">
+            Phone: +63 (43) 123-4567
+          </p>
+          <p style="color: var(--color-text-inverse); margin: 0; opacity: 0.9;">
+            Email: info@mabinitourism.com
+          </p>
+        </div>
+        
+        <div>
+          <h3 style="font-family: var(--font-family-primary); font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); color: var(--color-text-inverse); margin: 0 0 var(--spacing-6) 0;">
+            Follow Us
+          </h3>
+          <div style="display: flex; gap: var(--spacing-4);">
+            <a href="#" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.9; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'">Facebook</a>
+            <a href="#" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.9; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'">Instagram</a>
+            <a href="#" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.9; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'">YouTube</a>
+          </div>
+        </div>
+      </div>
+      
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: var(--spacing-8); text-align: center;">
+        <p style="color: var(--color-text-inverse); margin: 0 0 var(--spacing-4) 0; font-size: var(--font-size-lg); font-weight: var(--font-weight-medium);">
+          Experience Nature, Culture, and Adventure
+        </p>
+        <p style="color: var(--color-text-inverse); margin: 0; opacity: 0.7; font-size: var(--font-size-sm);">
+          &copy; 2024 Mabini Tourism Board. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.toggle('active');
+    }
+    
+    function closeMobileMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.remove('active');
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const mobileMenu = document.getElementById('mobileMenu');
+      const toggleButton = document.querySelector('.mobile-menu-toggle');
+      
+      if (!mobileMenu.contains(event.target) && !toggleButton.contains(event.target)) {
+        mobileMenu.classList.remove('active');
+      }
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
